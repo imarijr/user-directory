@@ -6,8 +6,8 @@ const handleSubmit = function(ev){
     const f = ev.target
     const userName = f.userName.value
     const age = f.age.value
-    const color = f.favoriteColor.value
     
+    const color = f.favoriteColor.value
     
     const nameItem = document.createElement('li')
     nameItem.textContent = `Name: ${userName}`
@@ -16,12 +16,7 @@ const handleSubmit = function(ev){
     ageItem.textContent = `Age: ${age}`
 
     const colorItem =  document.createElement('li')
-    const colorDiv = document.createElement('div')
-    colorDiv.style.backgroundColor = color
-    colorDiv.style.width = '6rem'
-    colorDiv.style.height = '3rem'
-    colorItem.appendChild(colorDiv)
-
+    colorItem.appendChild(renderColor(color))
     
 
     const list = document.createElement('ul')
@@ -34,6 +29,17 @@ const handleSubmit = function(ev){
     users.appendChild(list)
     f.reset()
     f.userName.focus()
+}
+
+const renderColor = function(color)
+{
+   
+    const colorDiv = document.createElement('div')
+    colorDiv.style.width = '6rem'
+    colorDiv.style.height = '3rem'
+    colorDiv.style.backgroundColor = color
+
+    return colorDiv
 }
 
 
