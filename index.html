@@ -18,16 +18,16 @@
     </head>
     <body>
         <h1>User Directory</h1>
-        <h2>Welcome!</h2>
-        <h2 class = "heading2">Click the button</h2>
-        <h2> See what happens!</h2>
-        <h3>Do it</h3>
+        
         <p class="greeting">by Imari McKinney</p>
         
-        <form >
-            Title:
-            <input type="text" id="newTitle" ><br><br>
-            <button class='button1'> Submit </button>
+        <form id='userForm'>
+            <p>
+                <label for="userName">Name</label>
+                <input type="text" id="newTitle" name="userName" >
+               
+            </p>
+            <button type='submit'> Do it </button>
           </form>
         
         <script src="index.js"></script>

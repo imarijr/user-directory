@@ -1,11 +1,17 @@
-const button = document.querySelector('button.button1')
+const form=document.querySelector('#userForm')
 
+const handleSubmit = function(ev){
+    ev.preventDefault()
+    const heading =document.querySelector('h1')
+    const f = ev.target
+    const userName = f.userName.value
+    heading.textContent = userName;
 
-function changeText()
-{
-    const p = document.querySelector('h2.heading2')
-    p.textContent = document.getElementById("newTitle").value;
 }
 
-button.addEventListener('click', changeText)
+
+ form.addEventListener('submit', handleSubmit )
+
+
+
 
