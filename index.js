@@ -17,8 +17,7 @@ const renderListItem = function(name,item)
     {
         
        const Item = document.createElement('li')
-       Item.textContent = `${name}: `
-
+      
        const term = document.createElement('dt')
        term.textContent = name
 
