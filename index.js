@@ -4,12 +4,17 @@ const handleSubmit = function(ev){
     ev.preventDefault()
     
     const f = ev.target
-    const userName = f.userName.value
-    const age = f.age.value    
-    const color = f.favoriteColor.value     
+
+    const user ={
+        Name:f.userName.value,
+        Age: f.age.value,
+        Color: renderColor(f.favoriteColor.value),
+    }
+
+          
 
     const users =document.querySelector('#users')
-    users.appendChild(renderList(userName,age,color))
+    users.appendChild(renderList(user))
     f.reset()
     f.userName.focus()
 }
@@ -27,30 +32,27 @@ const renderColor = function(color)
 
 const renderListItem = function(name,item)
     {
-        if(name == 'Color')
-        {
-            const colorItem = document.createElement('li')
-            colorItem.textContent = 'Favorite Color: '   
-            colorItem.appendChild(renderColor(item))        
-            return colorItem
-            
         
-        }
-        else
-        {
        const Item = document.createElement('li')
-       Item.textContent = `${name}: ${item}`             
-        
+       Item.textContent = `${name}: `             
+       try {
+        Item.appendChild(item)
+      } catch(e) {
+        Item.textContent += item
+      }
         return Item
         }
-    }
+    
 
-const renderList = function(userName, age, color)
+const renderList = function(data)
 {
     const list = document.createElement('ul')
-    list.appendChild(renderListItem('Name',userName))
-    list.appendChild(renderListItem('Age',age))
-    list.appendChild(renderListItem('Color',color))
+     const labels = Object.keys(data)
+    labels.forEach(label =>
+    {
+       const item = renderListItem(label,data[label])
+       list.appendChild(item)
+    })
 
     return list
 }
