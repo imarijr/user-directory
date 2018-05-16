@@ -12,34 +12,39 @@
         <meta charset="UTF-8">
         
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>User Directory</title>
+        <title >User Directory</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css">
     </head>
-    <body>
+    <body style="background-color:rgb(182, 213, 218);">
         <h1>User Directory</h1>
         
-        <p class="greeting">by Imari McKinney</p>
+        
         
         <form id='userForm'>
             <p>
+            
                 <label for="userName">Name</label>
-                <input type="text" name="userName" autofocus>
+                <br>
+                <input type="text" name="userName" autofocus placeholder="Your name..">
                
             </p> 
 
             <p>
                 <label for="age">Age</label>
-                <input type ="number" name="age">
+                <br>
+                <input type ="number" name="age" placeholder="Your age..">
                 
             </p>
 
             <p>
                 <label for='favoriteColor'>Favorite Color</label>
+                <br>
                 <input type='color' name='favoriteColor' value='#000000'>
             </p>
-            <button type='submit'> Do it </button>
-          </form>
+            <button type='submit'> Add User </button>
+        </form>
+        <p class="greeting" style="font-size:50%">by Imari McKinney</p>
 
           <div id ='users'>
               
