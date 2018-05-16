@@ -6,17 +6,10 @@ const handleSubmit = function(ev){
     const f = ev.target
     const userName = f.userName.value
     const age = f.age.value    
-    const color = f.favoriteColor.value  
-      
-        
-    const list = document.createElement('ul')
-    list.appendChild(renderListItem('Name',userName))
-    list.appendChild(renderListItem('Age',age))
-    list.appendChild(renderListItem('Color',color))
-    
+    const color = f.favoriteColor.value     
 
-   const users =document.querySelector('#users')
-    users.appendChild(list)
+    const users =document.querySelector('#users')
+    users.appendChild(renderList(userName,age,color))
     f.reset()
     f.userName.focus()
 }
@@ -49,6 +42,16 @@ const renderListItem = function(name,item)
         return Item
         }
     }
+
+const renderList = function(userName, age, color)
+{
+    const list = document.createElement('ul')
+    list.appendChild(renderListItem('Name',userName))
+    list.appendChild(renderListItem('Age',age))
+    list.appendChild(renderListItem('Color',color))
+
+    return list
+}
    
 
       
