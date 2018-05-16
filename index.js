@@ -29,8 +29,10 @@ const renderListItem = function(name,item)
     {
         if(name == 'Color')
         {
-                       
-            return renderColor(item)
+            const colorItem = document.createElement('li')
+            colorItem.textContent = 'Favorite Color: '   
+            colorItem.appendChild(renderColor(item))        
+            return colorItem
             
         
         }
