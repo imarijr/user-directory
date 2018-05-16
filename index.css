@@ -67,6 +67,14 @@ main{
     margin: auto;
     padding: 1rem;
 }
-li{
+dl > li{
     list-style: none;
+}
+
+dl:nth-of-type(even){
+    background-color: rgb(214, 210, 210);
+}
+
+dl{
+    padding: 1rem;
 }
