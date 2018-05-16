@@ -5,25 +5,15 @@ const handleSubmit = function(ev){
     
     const f = ev.target
     const userName = f.userName.value
-    const age = f.age.value
-    
-    const color = f.favoriteColor.value
-    
-    const nameItem = document.createElement('li')
-    nameItem.textContent = `Name: ${userName}`
-
-    const ageItem =  document.createElement('li')
-    ageItem.textContent = `Age: ${age}`
-
-    const colorItem =  document.createElement('li')
-    colorItem.appendChild(renderColor(color))
-    
-
+    const age = f.age.value    
+    const color = f.favoriteColor.value  
+      
+        
     const list = document.createElement('ul')
-    list.appendChild(nameItem)
-    list.appendChild(ageItem)
-    list.appendChild(colorItem)
-
+    list.appendChild(renderListItem('Name',userName))
+    list.appendChild(renderListItem('Age',age))
+    list.appendChild(renderListItem('Color',color))
+    
 
    const users =document.querySelector('#users')
     users.appendChild(list)
@@ -42,6 +32,28 @@ const renderColor = function(color)
     return colorDiv
 }
 
+const renderListItem = function(name,item)
+    {
+        if(name == 'Color')
+        {
+                       
+            return renderColor(item)
+            
+        
+        }
+        else
+        {
+       const Item = document.createElement('li')
+       Item.textContent = `${name}: ${item}`             
+        
+        return Item
+        }
+    }
+   
+
+      
+    
+    
 
  form.addEventListener('submit', handleSubmit )
 
