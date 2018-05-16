@@ -56,3 +56,17 @@ input[type=number]
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+main{
+    display:flex;
+}
+
+#userForm{
+    background-color: #eeeeee;
+    border: 2px solid #e3e3e3;
+    margin: auto;
+    padding: 1rem;
+}
+li{
+    list-style: none;
+}
